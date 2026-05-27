@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  web:
+    build: 
+      context: ./artifacts/web
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - api-server
+
+  api-server:
+    build:
+      context: ./artifacts/api-server
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - SECRET_PASSWORD=python_rocks
+      - PORT=8080
