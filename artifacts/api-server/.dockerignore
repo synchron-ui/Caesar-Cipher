@@ -2,6 +2,5 @@ __pycache__/
 *.pyc
 .env
 .DS_Store
-.replit-artifact
 dist/
 node_modules/
